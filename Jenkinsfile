@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'mvn clean package'
             }
+        }
 stage('nexus upload') {
             steps {
                 nexusArtifactUploader artifacts: [[artifactId: 'my-app', classifier: '', file: 'target/my-app.war', type: 'war']], 
