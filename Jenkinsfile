@@ -14,7 +14,6 @@ pipeline {
 stage('nexus upload') {
             steps {
                 script{
-                
                 def pomFile = readMavenPom file: 'pom.xml'
                 def version = pomFile.version
                 def nexusrepo = version.endsWith("SNAPSHOT") ? "my-app-snapshot" : "my-app-release"
