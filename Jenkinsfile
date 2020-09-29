@@ -21,7 +21,7 @@ stage('nexus upload') {
                     credentialsId: 'Nexus', 
                     groupId: 'in.javahome', 
                     nexusUrl: '13.233.245.222:8081', 
-                    nexusVersion: 'nexus2', 
+                    nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: nexusRepo, 
                     version: version
