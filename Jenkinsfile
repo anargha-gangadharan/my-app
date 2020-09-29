@@ -17,14 +17,14 @@ stage('nexus upload') {
                 
                 def pomFile = readMavenPom file: 'pom.xml'
                 def version = pomFile.version
-                def nexusRepo = version.endsWith("SNAPSHOT") ? "my-app-snapshot" : "my-app-release"
+                def nexusrepo = version.endsWith("SNAPSHOT") ? "my-app-snapshot" : "my-app-release"
                 nexusArtifactUploader artifacts: [[artifactId: 'my-app', classifier: '', file: 'target/my-app.war', type: 'war']], 
                     credentialsId: 'Nexus', 
                     groupId: 'in.javahome', 
                     nexusUrl: 'http://13.233.245.222:8081/', 
                     nexusVersion: 'nexus2', 
                     protocol: 'http', 
-                    repository: nexusRepo, 
+                    repository: nexusrepo, 
                     version: version
                 }
             }
