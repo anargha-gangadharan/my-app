@@ -34,7 +34,7 @@ stage('nexus upload') {
             steps {
                 sshagent(['tomcat-dev']) 
                 {
-                sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@3.6.41.96:/opt/tomcat8/webapp/my-app.war"
+                sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@3.6.41.96:/opt/tomcat8/webapps/my-app.war"
                 sh "ec2-user@3.6.41.96 /opt/tomcat8/bin/shutdown.sh"
                 sh "ec2-user@3.6.41.96 /opt/tomcat8/bin/startup.sh"
                 
